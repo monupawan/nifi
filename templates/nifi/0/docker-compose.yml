@@ -1,0 +1,32 @@
+nifi:
+   restart: always
+   tty: true
+   image: 035824440926.dkr.ecr.us-east-1.amazonaws.com/nrt/nifi:1.0.0
+   ports:
+     - 9092:8080
+     - 10000
+     - 10001
+     - 10002
+     - 10003
+     - 10004
+   environment:
+     NIFI_UI_BANNER_TEXT: 'Acquisition Node'
+     NIFI_INSTANCE_ROLE: 'edge'
+ncm:
+   image: 035824440926.dkr.ecr.us-east-1.amazonaws.com/nrt/nifi:1.0.0
+   ports:
+     - 9091:8080
+   environment:
+     NIFI_UI_BANNER_TEXT: 'Processing Cluster'
+     NIFI_INSTANCE_ROLE: 'cluster-manager'
+worker:
+   image: 035824440926.dkr.ecr.us-east-1.amazonaws.com/nrt/nifi:1.0.0
+   environment:
+     NIFI_UI_BANNER_TEXT: 'Processing Node'
+     NIFI_INSTANCE_ROLE: 'cluster-node'
+   ports:
+     - 10000
+     - 10001
+     - 10002
+     - 10003
+     - 10004
