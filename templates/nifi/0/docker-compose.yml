@@ -1,7 +1,7 @@
 ncm:
    image: 035824440926.dkr.ecr.us-east-1.amazonaws.com/nrt/nifi:1.0.0
    ports:
-     - 80800:8080
+     - 9080:8080
    environment:
      NIFI_UI_BANNER_TEXT: 'Processing Cluster'
      NIFI_INSTANCE_ROLE: 'cluster-manager'
