@@ -7,9 +7,9 @@ ncm:
     - NIFI_UI_BANNER_TEXT="Processing Cluster"
     - NIFI_INSTANCE_ROLE="cluster-manager"
     - ZK_SERVICE=${zk_link}
-  external_links:
+   external_links:
     - ${zk_link}
-  labels: 
+   labels: 
     io.rancher.container.dns: true
 worker:
    image: 035824440926.dkr.ecr.us-east-1.amazonaws.com/nrt/nifi:1.0.1
@@ -18,7 +18,7 @@ worker:
     - NIFI_UI_BANNER_TEXT="Processing Node"
     - NIFI_INSTANCE_ROLE="cluster-node"
     - ZK_SERVICE=${zk_link}
-  external_links:
+   external_links:
     - ${zk_link}
    labels: 
     io.rancher.container.dns: true
