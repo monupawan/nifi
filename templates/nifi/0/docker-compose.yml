@@ -6,7 +6,7 @@ ncm:
    environment:
     - NIFI_UI_BANNER_TEXT: 'Processing Cluster'
     - NIFI_INSTANCE_ROLE: 'cluster-manager'
-    - ZK_SERVICE=${zk_link}
+    - ZK_SERVICE: ${zk_link}
   external_links:
     - ${zk_link}
 worker:
@@ -15,7 +15,7 @@ worker:
    environment:
     - NIFI_UI_BANNER_TEXT: 'Processing Node'
     - NIFI_INSTANCE_ROLE: 'cluster-node'
-    - ZK_SERVICE=${zk_link}
+    - ZK_SERVICE: ${zk_link}
   external_links:
     - ${zk_link}
    ports:
