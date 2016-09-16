@@ -9,12 +9,12 @@
   questions:
     - variable: "nifi_scale"
       description: "Number of Nifi nodes"
-      label: "nimbus Nodes:"
+      label: "Nifi Nodes:"
       required: true
       default: 1
       type: "int"
     - variable: "ncm_scale"
-      description: "Number of ncm nodes"
+      description: "Number of Cluster Manager nodes"
       label: "ncm Nodes:"
       required: true
       default: 1
