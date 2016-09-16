@@ -14,6 +14,8 @@ ncm:
 worker:
    image: 035824440926.dkr.ecr.us-east-1.amazonaws.com/nrt/nifi:1.0.1
    command: bash /usr/local/nifi-1.0.0/bin/run.sh ncm
+   ports:
+    - 9081:8081
    environment:
     - NIFI_UI_BANNER_TEXT=Cluster-Node
     - NIFI_INSTANCE_ROLE=cluster-node
