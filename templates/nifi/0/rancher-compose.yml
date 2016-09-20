@@ -18,6 +18,7 @@
       label: "worker Nodes:"
       required: true
       default: 1
+      type: "int"
     - variable: "zk_link"
       description: |
         Choose the Zookeeper service to use. 
