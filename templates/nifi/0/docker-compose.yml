@@ -11,7 +11,6 @@ ncm:
     - ${zk_link}
    labels: 
     io.rancher.container.dns: true
-   restart: always
    volumes:
     - /usr/local/aeris_lib/:/usr/local/aeris_lib
 worker:
@@ -28,7 +27,6 @@ worker:
    labels: 
     io.rancher.container.dns: true
     io.rancher.scheduler.affinity:container_label_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
-   restart: always
    volumes:
     - /usr/local/aeris_lib/:/usr/local/aeris_lib
    ports:
