@@ -12,7 +12,7 @@ ncm:
    labels: 
     io.rancher.container.dns: true
    volumes:
-    - /usr/local/aeris_lib/:/usr/local/aeris_lib
+    - /usr/local/aeris_lib/resources/:/usr/local/aeris_lib/resources
 worker:
    image: 035824440926.dkr.ecr.us-east-1.amazonaws.com/nrt/nifi:1.0.1
    command: bash /usr/local/nifi-1.0.0/bin/run.sh ncm
@@ -28,7 +28,7 @@ worker:
     io.rancher.container.dns: true
     io.rancher.scheduler.affinity:container_label_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
    volumes:
-    - /usr/local/aeris_lib/:/usr/local/aeris_lib
+    - /usr/local/aeris_lib/resources/:/usr/local/aeris_lib/resources
    ports:
      - 10000
      - 10001
